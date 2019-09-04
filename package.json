@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.6.11",
     "nodemon": "^1.19.1"
   },
   "devDependencies": {
@@ -22,7 +23,7 @@
   "nodemonConfig": {
     "restartable": "rs",
     "ignore": [
-    "node_modules/**/node_modules"
+      "node_modules/**/node_modules"
     ],
     "delay": "2500",
     "env": {
