@@ -25,14 +25,18 @@ function routes(Book) {
       });
     });
 
+  bookRouter.use('/books/:booksid', (req, res, next) => {
+    Book.findById(req.params.bookId, (err, book) => {
+      if (err) {
+        return res.send(err);
+      }
+      return res.json(book);
+    });
+  })
+
   bookRouter.route('/books/:bookId')
     .get((req, res) => {
-      Book.findById(req.params.bookId, (err, book) => {
-        if (err) {
-          return res.send(err);
-        }
-        return res.json(book);
-      });
+
     })
     .put((req, res) => {
       Book.findById(req.params.bookId, (err, book) => {
