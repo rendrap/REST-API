@@ -1,7 +1,7 @@
 function booksController(Book) {
   function post(req, res) {
     const book = new Book(req.body);
-    if(!req.body.title) {
+    if (!req.body.title) {
       res.status(400);
       return res.send('Title is required');
     }

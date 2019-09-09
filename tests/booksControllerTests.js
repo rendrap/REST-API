@@ -1,6 +1,6 @@
 const should = require('should');
 const sinon = require('sinon');
-const booksController = require('../controllers/booksController');
+const bookController = require('../controllers/booksController');
 
 describe('Book Controller Test', () => {
   describe('Post', () => {
@@ -19,7 +19,7 @@ describe('Book Controller Test', () => {
         json: sinon.spy()
       };
 
-      const controller = booksController(Book);
+      const controller = bookController(Book);
       controller.post(req, res);
 
       res.status.calledWith(400).should.equal(true, `Bad status ${res.status.args[0][0]}`);
